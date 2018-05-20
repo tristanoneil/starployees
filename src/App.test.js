@@ -2,7 +2,21 @@ import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 
-it('renders Employees', () => {
-  const component = shallow(<App />);
-  expect(component.find('Employees').length).toEqual(1);
+let component;
+
+beforeEach(() => {
+  component = shallow(<App />);
+});
+
+it('renders a header', () => {
+  expect(component.find('header').length).toEqual(1);
+  expect(component.html()).toMatch(/Star.*ployees/);
+});
+
+it('renders a BrowserRouter', () => {
+  expect(component.find('BrowserRouter').length).toEqual(1);
+});
+
+it('renders an ApolloProvider', () => {
+  expect(component.find('ApolloProvider').length).toEqual(1);
 });

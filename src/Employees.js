@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 
 export const employeesQuery = gql`
@@ -31,7 +32,10 @@ export default class Employees extends Component {
           return (
             <div className="flex flex-wrap md:-mx-3">
               {data.employees.map(({ id, firstName, lastName }) => (
-                <div key={id} className="px-3 w-full lg:w-1/3 cursor-pointer">
+                <Link
+                  to={`/employees/${id}`}
+                  className="px-3 w-full lg:w-1/3 no-underline text-black"
+                  key={id}>
                   <div className="rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white">
                     <div className="px-6 py-4">
                       <div className="flex items-center">
@@ -48,7 +52,7 @@ export default class Employees extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           );

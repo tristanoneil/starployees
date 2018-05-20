@@ -3,6 +3,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 
 it('renders employees', async () => {
   const mocks = [
@@ -25,7 +26,9 @@ it('renders employees', async () => {
 
   const component = mount(
     <MockedProvider mocks={mocks}>
-      <Employees />
+      <MemoryRouter>
+        <Employees />
+      </MemoryRouter>
     </MockedProvider>,
   );
 
