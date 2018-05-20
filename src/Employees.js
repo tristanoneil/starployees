@@ -34,7 +34,18 @@ export default class Employees extends Component {
                 <div key={id} className="px-3 w-full lg:w-1/3 cursor-pointer">
                   <div className="rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white">
                     <div className="px-6 py-4">
-                      {firstName} {lastName}
+                      <div className="flex items-center">
+                        <div className="w-16">
+                          <img
+                            alt={lastName}
+                            className="rounded-full border-4 border-grey-light"
+                            src={`https://s3.amazonaws.com/starployees/${firstName.toLowerCase()}.jpg`}
+                          />
+                        </div>
+                        <div className="w-auto pl-4 font-bold text-xl">
+                          {firstName} {lastName}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
