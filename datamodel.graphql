@@ -2,4 +2,7 @@ type Employee {
   id: ID! @unique
   firstName: String!
   lastName: String!
+  phoneNumber: String!
+  email: String!
+  bio: String!
 }

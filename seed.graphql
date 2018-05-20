@@ -1,25 +1,73 @@
 mutation {
-  one: createEmployee(data: { firstName: "Galileo", lastName: "Galilei" }) {
+  one: createEmployee(
+    data: {
+      firstName: "Galileo"
+      lastName: "Galilei"
+      phoneNumber: "802-111-1111"
+      email: "galileo@example.com"
+      bio: "Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center - an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory."
+    }
+  ) {
     id
   }
 
-  two: createEmployee(data: { firstName: "Nicolaus", lastName: "Copernicus" }) {
+  two: createEmployee(
+    data: {
+      firstName: "Nicolaus"
+      lastName: "Copernicus"
+      phoneNumber: "802-222-2222"
+      email: "nicolaus@example.com"
+      bio: "It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small."
+    }
+  ) {
     id
   }
 
-  three: createEmployee(data: { firstName: "Caroline", lastName: "Herschel" }) {
+  three: createEmployee(
+    data: {
+      firstName: "Caroline"
+      lastName: "Herschel"
+      phoneNumber: "802-333-3333"
+      email: "caroline@example.com"
+      bio: "It suddenly struck me that that tiny pea, pretty and blue, was the Earth. I put up my thumb and shut one eye, and my thumb blotted out the planet Earth. I didn't feel like a giant. I felt very, very small."
+    }
+  ) {
     id
   }
 
-  four: createEmployee(data: { firstName: "Jocelyn", lastName: "Burnell" }) {
+  four: createEmployee(
+    data: {
+      firstName: "Jocelyn"
+      lastName: "Burnell"
+      phoneNumber: "802-444-4444"
+      email: "jocelyn@example.com"
+      bio: "NASA is not about the 'Adventure of Human Space Exploration' ... We won’t be doing it just to get out there in space – we'll be doing it because the things we learn out there will be making life better for a lot of people who won’t be able to go."
+    }
+  ) {
     id
   }
 
-  five: createEmployee(data: { firstName: "Annie", lastName: "Jump Cannon" }) {
+  five: createEmployee(
+    data: {
+      firstName: "Annie"
+      lastName: "Jump Cannon"
+      phoneNumber: "802-555-5555"
+      email: "annie@example.com"
+      bio: "Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science."
+    }
+  ) {
     id
   }
 
-  six: createEmployee(data: { firstName: "Neil", lastName: "deGrasse Tyson" }) {
+  six: createEmployee(
+    data: {
+      firstName: "Neil"
+      lastName: "deGrasse Tyson"
+      phoneNumber: "802-666-6666"
+      email: "neil@example.com"
+      bio: "The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space."
+    }
+  ) {
     id
   }
 }
