@@ -1,3 +1,4 @@
+import Error from './Error';
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
@@ -19,15 +20,7 @@ export default class Employees extends Component {
       <Query query={employeesQuery}>
         {({ loading, error, data }) => {
           if (loading) return <p>Loading</p>;
-          if (error)
-            return (
-              <h1>
-                Sorry, there was an error.
-                <span role="img" aria-label="Sobbing Face" className="pl-3">
-                  😭
-                </span>
-              </h1>
-            );
+          if (error) return <Error />;
 
           return (
             <div className="flex flex-wrap md:-mx-3">
