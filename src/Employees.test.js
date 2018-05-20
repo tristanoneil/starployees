@@ -1,9 +1,10 @@
 import Employees, { employeesQuery } from './Employees';
 import React from 'react';
 import gql from 'graphql-tag';
+import { MemoryRouter } from 'react-router-dom';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
+import { waitForApollo } from './testHelpers';
 
 it('renders employees', async () => {
   const mocks = [
@@ -24,18 +25,15 @@ it('renders employees', async () => {
     },
   ];
 
-  const component = mount(
-    <MockedProvider mocks={mocks}>
-      <MemoryRouter>
-        <Employees />
-      </MemoryRouter>
-    </MockedProvider>,
+  const component = await waitForApollo(
+    mount(
+      <MockedProvider mocks={mocks}>
+        <MemoryRouter>
+          <Employees />
+        </MemoryRouter>
+      </MockedProvider>,
+    ),
   );
-
-  // need to wait a tick then re-render in order to render the mocked data
-  // otherwise apollo thinks it's still loading
-  await new Promise(resolve => setTimeout(resolve));
-  component.update();
 
   expect(component.text()).toMatch('First Last');
 });
