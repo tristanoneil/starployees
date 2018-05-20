@@ -34,7 +34,7 @@ export default class Employee extends Component {
           </Query>
         </div>
         <div className="lg:w-2/3">
-          <Employees />
+          <Employees {...this.props} />
         </div>
       </Fragment>
     );
