@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
+export const employeesQuery = gql`
+  {
+    employees(orderBy: lastName_ASC) {
+      id
+      firstName
+      lastName
+    }
+  }
+`;
+
 export default class Employees extends Component {
   render() {
-    const query = gql`
-      {
-        employees(orderBy: lastName_ASC) {
-          id
-          firstName
-          lastName
-        }
-      }
-    `;
-
     return (
       <ul>
-        <Query query={query}>
+        <Query query={employeesQuery}>
           {({ loading, error, data }) => {
             if (loading) return <p>Loading</p>;
             if (error)

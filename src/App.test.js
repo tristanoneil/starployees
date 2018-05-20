@@ -2,7 +2,7 @@ import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 
-it('renders', () => {
+it('renders Employees', () => {
   const component = shallow(<App />);
-  expect(component.text()).toMatch('Under Construction');
+  expect(component.find('Employees').length).toEqual(1);
 });
