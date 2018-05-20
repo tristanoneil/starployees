@@ -27,7 +27,7 @@ export default class Employees extends Component {
               {data.employees.map(({ id, firstName, lastName }) => (
                 <Link
                   to={`/employees/${id}`}
-                  className="px-3 w-full lg:w-1/3 no-underline text-black"
+                  className="px-3 w-full lg:w-1/2 no-underline text-black"
                   key={id}>
                   <div className="rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white">
                     <div className="px-6 py-4">
