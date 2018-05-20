@@ -50,7 +50,11 @@ export default class Employee extends Component {
           </Query>
         </div>
         <div className="lg:w-2/3">
-          <Employees {...this.props} />
+          <Employees
+            {...Object.assign({}, this.props, {
+              activeId: this.props.match.params.id,
+            })}
+          />
         </div>
       </Fragment>
     );

@@ -67,7 +67,10 @@ export default class Employees extends Component {
                     }}
                     className="px-3 w-full lg:w-1/2 no-underline text-black"
                     key={id}>
-                    <div className="rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white">
+                    <div
+                      className={`rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white ${
+                        this.props.activeId === id ? 'active' : ''
+                      }`}>
                       <div className="px-6 py-4">
                         <div className="flex items-center">
                           <div className="w-16">

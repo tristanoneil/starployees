@@ -5,3 +5,7 @@
 body {
   @apply .bg-grey-lighter;
 }
+
+.active {
+  @apply .bg-purple .text-white;
+}

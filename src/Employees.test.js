@@ -6,7 +6,9 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { mount } from 'enzyme';
 import { waitForApollo } from './testHelpers';
 
-it('renders employees', async () => {
+let component;
+
+beforeEach(async () => {
   const mocks = [
     {
       request: { query: employeesQuery, variables: { query: '' } },
@@ -19,23 +21,35 @@ it('renders employees', async () => {
               id: 'id',
               lastName: 'Last',
             },
+            {
+              __typename: 'Employee',
+              firstName: 'Active',
+              id: 'active',
+              lastName: 'Employee',
+            },
           ],
         },
       },
     },
   ];
 
-  const component = await waitForApollo(
+  component = await waitForApollo(
     mount(
       <MockedProvider mocks={mocks}>
         <MemoryRouter>
-          <Employees />
+          <Employees activeId="active" />
         </MemoryRouter>
       </MockedProvider>,
     ),
   );
+});
 
+it('renders employees', async () => {
   expect(component.text()).toMatch('First Last');
+});
+
+it('adds an active class when an employee id matches an activeId prop', () => {
+  expect(component.find('.active').text()).toMatch('Active Employee');
 });
 
 describe('searching', () => {
