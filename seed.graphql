@@ -1,0 +1,25 @@
+mutation {
+  one: createEmployee(data: { firstName: "Galileo", lastName: "Galilei" }) {
+    id
+  }
+
+  two: createEmployee(data: { firstName: "Nicolaus", lastName: "Copernicus" }) {
+    id
+  }
+
+  three: createEmployee(data: { firstName: "Caroline", lastName: "Herschel" }) {
+    id
+  }
+
+  four: createEmployee(data: { firstName: "Jocelyn", lastName: "Burnell" }) {
+    id
+  }
+
+  five: createEmployee(data: { firstName: "Annie", lastName: "Jump Cannon" }) {
+    id
+  }
+
+  six: createEmployee(data: { firstName: "Neil", lastName: "deGrasse Tyson" }) {
+    id
+  }
+}
