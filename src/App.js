@@ -11,7 +11,17 @@ export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <Employees />
+        <div className="container mx-auto">
+          <header className="my-8 text-center md:text-left">
+            <h1 className="font-light">
+              <span role="img" aria-label="Star" className="pr-3">
+                ✨
+              </span>
+              Star<span className="text-grey-dark">ployees</span>
+            </h1>
+          </header>
+          <Employees />
+        </div>
       </ApolloProvider>
     );
   }

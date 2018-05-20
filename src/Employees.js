@@ -15,28 +15,34 @@ export const employeesQuery = gql`
 export default class Employees extends Component {
   render() {
     return (
-      <ul>
-        <Query query={employeesQuery}>
-          {({ loading, error, data }) => {
-            if (loading) return <p>Loading</p>;
-            if (error)
-              return (
-                <h1>
-                  Sorry, there was an error.
-                  <span role="img" aria-label="Sobbing Face" className="pl-3">
-                    😭
-                  </span>
-                </h1>
-              );
+      <Query query={employeesQuery}>
+        {({ loading, error, data }) => {
+          if (loading) return <p>Loading</p>;
+          if (error)
+            return (
+              <h1>
+                Sorry, there was an error.
+                <span role="img" aria-label="Sobbing Face" className="pl-3">
+                  😭
+                </span>
+              </h1>
+            );
 
-            return data.employees.map(({ id, firstName, lastName }) => (
-              <li key={id}>
-                {firstName} {lastName}
-              </li>
-            ));
-          }}
-        </Query>
-      </ul>
+          return (
+            <div className="flex flex-wrap md:-mx-3">
+              {data.employees.map(({ id, firstName, lastName }) => (
+                <div key={id} className="px-3 w-full lg:w-1/3 cursor-pointer">
+                  <div className="rounded shadow-md mb-6 bg-white hover:bg-purple hover:text-white">
+                    <div className="px-6 py-4">
+                      {firstName} {lastName}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
+        }}
+      </Query>
     );
   }
 }
