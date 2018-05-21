@@ -7,7 +7,12 @@ import qs from 'query-string';
 
 export const employeesQuery = gql`
   query($query: String!) {
-    employees(orderBy: lastName_ASC, where: { firstName_contains: $query }) {
+    employees(
+      orderBy: lastName_ASC
+      where: {
+        OR: [{ firstName_contains: $query }, { lastName_contains: $query }]
+      }
+    ) {
       id
       firstName
       lastName
