@@ -9,7 +9,6 @@ import { Query } from 'react-apollo';
 export const employeeQuery = gql`
   query employee($id: ID!) {
     employee(where: { id: $id }) {
-      id
       firstName
       lastName
       phoneNumber
