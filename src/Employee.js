@@ -2,6 +2,7 @@ import Employees from './Employees';
 import Error from './Error';
 import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
+import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 
 export const employeeQuery = gql`
@@ -21,7 +22,12 @@ export default class Employee extends Component {
   render() {
     return (
       <Fragment>
-        <div className="fixed lg:absolute pin-l pin-b lg:pin-none lg:pin-r lg:pin-t bg-white h-auto lg:h-full w-full lg:w-1/3 p-6 border-grey-light border-t lg:border-0 lg:border-l opacity-75 shadow">
+        <div className="fixed lg:absolute pin-l pin-b lg:pin-none lg:pin-r lg:pin-t bg-white h-auto lg:h-full w-full lg:w-1/3 p-6 border-grey-light border-t lg:border-0 lg:border-l shadow">
+          <Link
+            to="/"
+            className="text-grey-dark hover:text-white font-light no-underline absolute pin-t pin-r mr-6 mt-6 bg-grey-light hover:bg-purple py-1 px-3 rounded">
+            x
+          </Link>
           <Query
             query={employeeQuery}
             variables={{ id: this.props.match.params.id }}>
