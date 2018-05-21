@@ -1,5 +1,6 @@
 import Employees from './Employees';
 import Error from './Error';
+import Loading from './Loading';
 import React, { Component, Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Link } from 'react-router-dom';
@@ -32,7 +33,7 @@ export default class Employee extends Component {
             query={employeeQuery}
             variables={{ id: this.props.match.params.id }}>
             {({ loading, error, data }) => {
-              if (loading) return <p>Loading</p>;
+              if (loading) return <Loading />;
               if (error) return <Error />;
               return (
                 <Fragment>

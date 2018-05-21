@@ -1,9 +1,10 @@
 import Error from './Error';
+import Loading from './Loading';
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
+import qs from 'query-string';
 import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
-import qs from 'query-string';
 
 export const employeesQuery = gql`
   query($query: String!) {
@@ -59,7 +60,7 @@ export default class Employees extends Component {
         </div>
         <Query query={employeesQuery} variables={{ query: this.state.query }}>
           {({ loading, error, data }) => {
-            if (loading) return <p>Loading</p>;
+            if (loading) return <Loading />;
             if (error) return <Error />;
 
             return (
