@@ -4,5 +4,6 @@ type Employee {
   lastName: String!
   phoneNumber: String!
   email: String!
+  title: String!
   bio: String!
 }

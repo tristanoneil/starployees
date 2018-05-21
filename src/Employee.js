@@ -14,6 +14,7 @@ export const employeeQuery = gql`
       lastName
       phoneNumber
       email
+      title
       bio
     }
   }
@@ -44,9 +45,12 @@ export default class Employee extends Component {
                       src={`https://s3.amazonaws.com/starployees/${data.employee.firstName.toLowerCase()}.jpg`}
                     />
                   </div>
-                  <h2 className="mb-4">
+                  <h2>
                     {data.employee.firstName} {data.employee.lastName}
                   </h2>
+                  <p className="mb-4 italic text-grey-dark">
+                    {data.employee.title}
+                  </p>
                   <p>
                     <strong>p:</strong> {data.employee.phoneNumber}
                   </p>

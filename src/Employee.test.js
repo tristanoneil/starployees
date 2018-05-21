@@ -19,6 +19,7 @@ it('renders an employee for a given id', async () => {
             lastName: 'Last',
             phoneNumber: '802-000-0000',
             email: 'first@example.com',
+            title: 'Title',
             bio: 'Bio',
           },
         },
