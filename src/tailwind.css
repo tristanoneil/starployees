@@ -9,3 +9,15 @@ body {
 .active {
   @apply .bg-purple .text-white;
 }
+
+
+.loading {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}

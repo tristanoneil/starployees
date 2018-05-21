@@ -1,7 +1,10 @@
 import React from 'react';
 
 export default () => (
-  <span role="img" aria-label="Loading" className="pl-3">
-    ⏰
-  </span>
+  <div className="text-center">
+    <span role="img" aria-label="Loading" className="mb-3 loading">
+      ⏰
+    </span>
+    <h2>Loading</h2>
+  </div>
 );
