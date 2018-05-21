@@ -36,10 +36,16 @@ export default class Employee extends Component {
               if (error) return <Error />;
               return (
                 <Fragment>
+                  <div className="text-center bg-grey-lightest border-b border-grey-light py-6 -mt-6 -mx-6 mb-6 hidden lg:block">
+                    <img
+                      alt={data.employee.lastName}
+                      className="rounded-full w-64 h-64 border-4 border-grey-light"
+                      src={`https://s3.amazonaws.com/starployees/${data.employee.firstName.toLowerCase()}.jpg`}
+                    />
+                  </div>
                   <h2 className="mb-4">
                     {data.employee.firstName} {data.employee.lastName}
                   </h2>
-                  <hr className="border-b border-grey-light my-4" />
                   <p>
                     <strong>p:</strong> {data.employee.phoneNumber}
                   </p>
