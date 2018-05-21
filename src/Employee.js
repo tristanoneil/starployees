@@ -36,31 +36,39 @@ export default class Employee extends Component {
             {({ loading, error, data }) => {
               if (loading) return <Loading />;
               if (error) return <Error />;
+
+              const {
+                firstName,
+                lastName,
+                phoneNumber,
+                email,
+                title,
+                bio,
+              } = data.employee;
+
               return (
                 <Fragment>
                   <div className="text-center bg-grey-lightest border-b border-grey-light py-6 -mt-6 -mx-6 mb-6 hidden lg:block">
                     <img
-                      alt={data.employee.lastName}
+                      alt={lastName}
                       className="rounded-full w-64 h-64 border-4 border-grey-light"
-                      src={`https://s3.amazonaws.com/starployees/${data.employee.firstName.toLowerCase()}.jpg`}
+                      src={`https://s3.amazonaws.com/starployees/${firstName.toLowerCase()}.jpg`}
                     />
                   </div>
                   <h2>
-                    {data.employee.firstName} {data.employee.lastName}
+                    {firstName} {lastName}
                   </h2>
-                  <p className="mb-4 italic text-grey-dark">
-                    {data.employee.title}
+                  <p className="mb-4 italic text-grey-dark">{title}</p>
+                  <p>
+                    <strong>p:</strong> {phoneNumber}
                   </p>
                   <p>
-                    <strong>p:</strong> {data.employee.phoneNumber}
-                  </p>
-                  <p>
-                    <strong>e:</strong> {data.employee.email}
+                    <strong>e:</strong> {email}
                   </p>
                   <h4 className="uppercase bg-blue inline-block text-white my-4 px-4 py-2 rounded text-xs">
                     Bio
                   </h4>
-                  <p className="leading-normal">{data.employee.bio}</p>
+                  <p className="leading-normal">{bio}</p>
                 </Fragment>
               );
             }}
