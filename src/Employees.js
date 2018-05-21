@@ -54,7 +54,7 @@ export default class Employees extends Component {
             onChange={this.handleSearch}
             value={this.state.query}
             className="shadow appearance-none border rounded w-full py-4 px-4 text-grey-darker"
-            placeholder="Search"
+            placeholder="Search (first name, last name)"
           />
         </div>
         <Query query={employeesQuery} variables={{ query: this.state.query }}>
